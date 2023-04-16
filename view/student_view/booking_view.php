@@ -1,3 +1,3 @@
 <?php
 
-echo"booking";
+echo"booking from adom";
