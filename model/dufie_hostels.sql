@@ -44,11 +44,13 @@ CREATE TABLE Booking (
     booking_date DATE NOT NULL,
     check_in_date DATE NOT NULL,
     check_out_date DATE NOT NULL,
-    payment_status VARCHAR(25) NOT NULL,
+    payment_status VARCHAR(50) NOT NULL,
     student_id INT NOT NULL,
     room_id INT NOT NULL,
+    payment_id INT,
     FOREIGN KEY (student_id) REFERENCES Student(student_id),
-    FOREIGN KEY (room_id) REFERENCES Room(room_id)
+    FOREIGN KEY (room_id) REFERENCES Room(room_id),
+    FOREIGN KEY (payment_id) REFERENCES Payment(payment_id)
 );
 
 CREATE TABLE Payment (
