@@ -5,26 +5,26 @@ USE dufie_hostels;
 
 CREATE TABLE Building (
     building_id INT PRIMARY KEY AUTO_INCREMENT,
-    building_name VARCHAR(100) NOT NULL,
+    building_name VARCHAR(25) NOT NULL,
     number_of_floors INT NOT NULL,
     number_of_rooms INT NOT NULL
 );
 
 CREATE TABLE Student (
     student_id INT PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    phone_number VARCHAR(20) NOT NULL,
-    parent_number VARCHAR(20)
+    first_name VARCHAR(25) NOT NULL,
+    last_name VARCHAR(25) NOT NULL,
+    phone_number VARCHAR(25) NOT NULL,
+    parent_number VARCHAR(25)
 );
 
 CREATE TABLE Room (
     room_id INT PRIMARY KEY AUTO_INCREMENT,
-    room_number INT NOT NULL,
-    room_type VARCHAR(50) NOT NULL,
+    room_number VARCHAR(25) NOT NULL,
+    room_type VARCHAR(25) NOT NULL,
     number_of_beds INT NOT NULL,
     price DECIMAL(10, 2) NOT NULL,
-    availability_status VARCHAR(50) NOT NULL,
+    availability_status VARCHAR(25) NOT NULL,
     building_id INT NOT NULL,
     student_id INT NOT NULL,
     FOREIGN KEY (building_id) REFERENCES Building(building_id),
@@ -34,7 +34,7 @@ CREATE TABLE Room (
 CREATE TABLE Room_Amenities (
     room_amenities_id INT PRIMARY KEY AUTO_INCREMENT,
     room_id INT NOT NULL,
-    amenity_name VARCHAR(100) NOT NULL,
+    amenity_name VARCHAR(25) NOT NULL,
     amenity_description VARCHAR(255),
     FOREIGN KEY (room_id) REFERENCES Room(room_id)
 );
@@ -44,7 +44,7 @@ CREATE TABLE Booking (
     booking_date DATE NOT NULL,
     check_in_date DATE NOT NULL,
     check_out_date DATE NOT NULL,
-    payment_status VARCHAR(50) NOT NULL,
+    payment_status VARCHAR(25) NOT NULL,
     student_id INT NOT NULL,
     room_id INT NOT NULL,
     FOREIGN KEY (student_id) REFERENCES Student(student_id),
@@ -55,7 +55,7 @@ CREATE TABLE Payment (
     payment_id INT PRIMARY KEY AUTO_INCREMENT,
     payment_date DATE NOT NULL,
     payment_amount DECIMAL(10, 2) NOT NULL,
-    payment_type VARCHAR(50) NOT NULL,
+    payment_type VARCHAR(25) NOT NULL,
     booking_id INT NOT NULL,
     student_id INT NOT NULL,
     FOREIGN KEY (booking_id) REFERENCES Booking(booking_id),
@@ -67,15 +67,15 @@ CREATE TABLE Maintenance_Request (
     request_date DATE NOT NULL,
     request_description VARCHAR(255) NOT NULL,
     room_id INT NOT NULL,
-    maintenance_status VARCHAR(50) NOT NULL,
+    maintenance_status VARCHAR(25) NOT NULL,
     FOREIGN KEY (room_id) REFERENCES Room(room_id)
 );
 
 CREATE TABLE Maintenance_Worker (
     worker_id INT PRIMARY KEY AUTO_INCREMENT,
-    first_name VARCHAR(50) NOT NULL,
-    last_name VARCHAR(50) NOT NULL,
-    phone_number VARCHAR(20) NOT NULL,
+    first_name VARCHAR(25) NOT NULL,
+    last_name VARCHAR(25) NOT NULL,
+    phone_number VARCHAR(25) NOT NULL,
     request_id INT NOT NULL,
     FOREIGN KEY (request_id) REFERENCES Maintenance_Request(request_id)
 );
