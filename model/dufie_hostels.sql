@@ -94,12 +94,43 @@ CREATE TABLE Room_Booking_History (
 
 
 -- Task 2.3: Data population
--- INSERT INTO Building (building_name, number_of_floors, number_of_rooms)
--- VALUES ('Presteige', 2, 10),
---        ('Male Block', 3, 30),
---        ('Female Block', 3, 30),
---        ('Dufie Annex', 4, 50),
---        ('Dufie Gold', 4, 30);
+
+INSERT INTO Building VALUES ('Presteige', 2, 10);
+INSERT INTO Building VALUES('Male Block', 3, 30);
+INSERT INTO Building VALUES('Female Block', 3, 30);
+INSERT INTO Building VALUES('Dufie Annex', 4, 50);
+INSERT INTO Building VALUES('Dufie Gold', 4, 30);
+
+
+--Data population for Students
+INSERT INTO Student VALUES ('Aaron','Adom',0557660560,0244256397);
+INSERT INTO Student VALUES ('Mateen','Andan',0239093039,0559989091); 
+INSERT INTO Student VALUES ('Michael','Eshun',0209991234,059084904); 
+INSERT INTO Student VALUES ('David','Sampah',055000905,0243489091); 
+INSERT INTO Student VALUES ('Ian','Akotey',0249876589,0248091209); 
+
+
+--Data population for  Booking
+INSERT INTO Booking VALUES ('2023-02-23','2023-03-15','2023-06-30', 'paid');
+INSERT INTO Booking VALUES ('2023-02-23','2023-03-15','2023-06-30', 'unpaid');
+INSERT INTO Booking VALUES ('2023-02-23','2023-03-15','2023-06-30', 'paid');
+INSERT INTO Booking VALUES ('2023-02-23','2023-03-15','2023-06-30', 'paid');
+INSERT INTO Booking VALUES ('2023-02-23','2023-03-15','2023-06-30', 'paid');
+
+
+--Data population for Payment
+INSERT INTO Payment VALUES ('2023-02-30',6000,'cash');
+INSERT INTO Payment VALUES ('2023-02-21',6000,'bank transfer');
+INSERT INTO Payment VALUES ('2023-02-23',6000,'mobile money');
+INSERT INTO Payment VALUES ('2023-02-20',6000,'cash');
+INSERT INTO Payment VALUES ('2023-02-21',6000,'bank transfer')
+
+--Data population for Room
+INSERT INTO Room VALUES(1,'2 in a room',2, 'available');
+INSERT INTO Room VALUES(8,'2 in a room',2, 'available');
+INSERT INTO Room VALUES(9,'3 in a room',3, 'available');
+INSERT INTO Room VALUES(5,'2 in a room',2, 'available');
+INSERT INTO Room VALUES(2,'4 in a room',4, 'available');
 
 
 

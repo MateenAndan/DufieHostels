@@ -1,49 +1,68 @@
-<?php
-// student_view.php
-
-require_once '../model/student_model.php';
-
-$studentModel = new StudentModel($pdo);
-$students = $studentModel->getAllStudents();
-?>
-
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Student List</title>
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/5.0.0-beta1/css/bootstrap.min.css" integrity="sha384-pzjw8f+ua7Kw1TIq0v8FqFjcJ6pajs/rfdfs3SO+kD4Ck5BdPtF+to8xMp9Q9AV6" crossorigin="anonymous">
-    <link rel="stylesheet" href="styles.css">
+	<title>Hostel Management System</title>
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			margin: 0;
+			padding: 0;
+			background-color: #f2f2f2;
+		}
+		header {
+			background-color: #333;
+			color: white;
+			padding: 10px;
+			text-align: center;
+			font-size: 36px;
+			font-weight: bold;
+		}
+		nav {
+			background-color: #555;
+			color: white;
+			padding: 10px;
+			text-align: center;
+		}
+		nav a {
+			color: white;
+			text-decoration: none;
+			padding: 10px;
+		}
+		nav a:hover {
+			background-color: #444;
+		}
+		.container {
+			max-width: 800px;
+			margin: 0 auto;
+			padding: 20px;
+		}
+		h1 {
+			font-size: 28px;
+			font-weight: bold;
+			margin-top: 40px;
+			margin-bottom: 20px;
+		}
+		p {
+			font-size: 18px;
+			line-height: 1.5;
+			margin-bottom: 20px;
+		}
+	</style>
 </head>
 <body>
-    <div class="container mt-5">
-        <h1 class="mb-4">Student List</h1>
-        <a href="add_student.php" class="btn btn-primary mb-3">Add Student</a>
-        <table class="table table-bordered">
-            <thead>
-                <tr>
-                    <th>ID</th>
-                    <th>First Name</th>
-                    <th>Last Name</th>
-                    <th>Phone Number</th>
-                    <th>Parent Number</th>
-                    <th>Room ID</th>
-                </tr>
-            </thead>
-            <tbody>
-                <?php foreach ($students as $student): ?>
-                    <tr>
-                        <td><?php echo $student['student_id']; ?></td>
-                        <td><?php echo $student['first_name']; ?></td>
-                        <td><?php echo $student['last_name']; ?></td>
-                        <td><?php echo $student['phone_number']; ?></td>
-                        <td><?php echo $student['parent_number']; ?></td>
-                        <td><?php echo $student['room_id']; ?></td>
-                    </tr>
-                <?php endforeach; ?>
-            </tbody>
-        </table>
-    </div>
+	<header>
+		Hostel Management System
+	</header>
+	<nav>
+		<a href="#">Home</a>
+		<a href="#">Students</a>
+		<a href="#">Rooms</a>
+		<a href="#">Reports</a>
+		<a href="#">About</a>
+	</nav>
+	<div class="container">
+		<h1>Welcome to the Hostel Management System</h1>
+		<p>This system allows you to manage students, rooms, and reports for a hostel. Please use the navigation bar above to get started.</p>
+	</div>
 </body>
 </html>
